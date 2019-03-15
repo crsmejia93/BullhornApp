@@ -8,23 +8,27 @@
 </head>
 <body>
 <!--Navigation-->
-<div></div>
-<!--Content-->
 <div>
-    <div>
-        <h2 th:text="${message.title}"></h2>
+    <a href="/" class="btn btn-outline-primary">Show All Messages</a>
+</div>
+<!--Content-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2 th:text="${message.title}"></h2>
+        </div>
     </div><br/>
-    <div>
-        <h2>Message</h2>
-        <p th:text="${message.content}"></p>
+    <div class="row">
+        <div class="col">
+            <h2>Message</h2>
+            <p th:text="${message.content}"></p>
+        </div>
     </div><br/>
-    <div>
-        <h5>Posted On</h5>
-        <span th:text="${message.postedDate}"></span>
-    </div>
-    <div>
-        <h4>Sent By</h4>
-        <span th:text="${message.sentBy}"></span>
+    <div class="row">
+        <div class="col">
+            <h4>Sent By</h4>
+            <span th:text="${message.sentBy}"></span>
+        </div>
     </div>
 </div>
 <div>

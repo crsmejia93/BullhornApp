@@ -10,16 +10,16 @@
 <!--Navigation-->
 <div></div>
 <!--Content-->
-<div>
-    <a href="/add" > Add A Message</a>
-    <div>
-       <table>
+<div class="container-fluid">
+    <a href="/add" class="btn btn-outline-primary btn-sm"> Add A Message</a>
+    <div >
+       <table class="table">
            <thead>
             <tr>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Posted</th>
-                <th>Sent By</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Posted</th>
+                <th scope="col">Sent By</th>
             </tr>
            </thead>
            <tbody>
@@ -29,9 +29,9 @@
                <td th:text="${message.postedDate}"></td>
                <td th:text="${message.sentBy}"></td>
                <td>
-                   <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
-                   <a th:href="@{/detail/{id}(id=${message.id})}">Details</a>
-                   <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
+                   <a th:href="@{/update/{id}(id=${message.id})}" class="btn btn-outline-secondary">Update</a>
+                   <a th:href="@{/detail/{id}(id=${message.id})}" class="btn btn-outline-secondary">Details</a>
+                   <a th:href="@{/delete/{id}(id=${message.id})}" class="btn btn-outline-danger">Delete</a>
                </td>
            </tr>
            </tbody>
