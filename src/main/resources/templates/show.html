@@ -30,6 +30,11 @@
             <span th:text="${message.sentBy}"></span>
         </div>
     </div>
+    <div class="row">
+        <div class="col-4" th:if="${message.image} != null">
+            <img width="256px" height="256px" th:src="${message.image}" />
+        </div>
+    </div>
 </div>
 <div>
     <a th:href="@{/delete/{id}(id=${message.id})}">Delete Message</a>
