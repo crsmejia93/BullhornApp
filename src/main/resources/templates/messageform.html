@@ -12,7 +12,7 @@
 <!--Content-->
 <div class="container-fluid">
     <h2>Create A Message</h2>
-    <form action="#" th:action="@{/process}" th:object="${message}" method="post">
+    <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
         <input type="hidden" th:field="*{id}"/>
         <!--Title-->
         <div class="form-group" id="title">
@@ -32,6 +32,9 @@
             <input type="text" th:field="*{sentBy}"/>
             <span th:if="${#fields.hasErrors('sentBy')}" th:error="*{sentBy}"></span>
         </div><br/>
+        <div>
+            <input type="file" name="file"/>
+        </div>
         <br/>
         <input type="submit" value="Submit"/>
     </form>
