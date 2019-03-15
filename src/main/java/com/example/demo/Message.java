@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 public class Message {
@@ -23,7 +23,7 @@ public class Message {
     private String content;
 
 
-    private Date postedDate;
+    private LocalDateTime postedDate;
 
     @NotNull
     @Size(min=5, max = 15)
@@ -54,11 +54,11 @@ public class Message {
         this.content = content;
     }
 
-    public Date getPostedDate() {
+    public LocalDateTime getPostedDate() {
         return postedDate;
     }
 
-    public void setPostedDate(Date postedDate) {
+    public void setPostedDate(LocalDateTime postedDate) {
         this.postedDate = postedDate;
     }
 

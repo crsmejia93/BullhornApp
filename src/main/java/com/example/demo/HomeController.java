@@ -40,11 +40,11 @@ public class HomeController {
         if(result.hasErrors()){
             return "messageform";
         }
-//        try{
-//            message.;
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
+        try{
+            message.setPostedDate(LocalDateTime.now());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         messageRepository.save(message);
         return "redirect:/";
     }
