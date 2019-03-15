@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Create Message</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+</head>
+<body>
+<!--Navigation-->
+<div></div>
+<!--Content-->
+<div>
+    <h2>Create A Message</h2>
+    <form action="#" th:action="@{/process}" th:object="${message}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <!--Title-->
+        <div>
+            <h4>Title</h4>
+            <input type="text" th:field="*{title}"/>
+            <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+        </div><br/>
+        <!--Content-->
+        <div id="content">
+            <h4>Message</h4>
+            <textarea th:field="*{content}"></textarea>
+            <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+        </div><br/>
+        <!--sent by-->
+        <div id="author">
+            <h4>Author</h4>
+            <input type="text" th:field="*{sentBy}"/>
+            <span th:if="${#fields.hasErrors('sentBy')}" th:error="*{sentBy}"></span>
+        </div><br/>
+        <br/>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+<!--Footer-->
+<footer></footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>
