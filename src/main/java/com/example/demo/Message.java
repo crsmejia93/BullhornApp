@@ -19,7 +19,7 @@ public class Message {
     private String title;
 
     @NotNull
-    @Size(min = 3, max=250)
+    @Size(min = 3, max=500)
     private String content;
 
     //The user will never see this

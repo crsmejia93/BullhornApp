@@ -18,10 +18,10 @@
     <div>
         <table>
             <tbody>
-                <tr th:each="message : ${messages}" class="card" style="width: 30rem;">
-                    <td>
+                <tr class="row">
+                    <td th:each="message : ${messages}" class="card col-sm-6" style="width: 30rem;">
                         <div th:if="${message.image} != null">
-                            <img width="256px" height="256px" th:src="${message.image}" class="card-img-top"/>
+                            <img width="236px" height="236px" th:src="${message.image}" class="card-img-top"/>
                         </div>
                         <div class="card-body">
                             <h4 th:text="${message.title}" class="card-title"></h4>
@@ -29,11 +29,11 @@
                             <label>Posted on: </label><span th:text="${message.postedDate}"></span>
                             <label> By: </label><span th:text="${message.sentBy}"></span>
                         </div>
-                    </td>
-                    <td>
-                        <a th:href="@{/update/{id}(id=${message.id})}" class="btn btn-outline-secondary">Update</a>
-                        <a th:href="@{/detail/{id}(id=${message.id})}" class="btn btn-outline-secondary">Details</a>
-                        <a th:href="@{/delete/{id}(id=${message.id})}" class="btn btn-outline-danger">Delete</a>
+                        <div class="card-footer">
+                            <a th:href="@{/update/{id}(id=${message.id})}" class="btn btn-outline-secondary">Update</a>
+                            <a th:href="@{/detail/{id}(id=${message.id})}" class="btn btn-outline-secondary">Details</a>
+                            <a th:href="@{/delete/{id}(id=${message.id})}" class="btn btn-outline-danger">Delete</a>
+                        </div>
                     </td>
                 </tr>
             </tbody>
