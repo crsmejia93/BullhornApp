@@ -8,39 +8,41 @@
 </head>
 <body>
 <!--Navigation-->
-<div></div>
+<nav th:replace="base :: navlinks"></nav>
 <!--Content-->
 <div class="container-fluid">
     <h2>Create A Message</h2>
-    <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
-        <input type="hidden" th:field="*{id}"/>
-        <!--Title-->
-        <div class="form-group" id="title">
-            <h4>Title</h4>
-            <input type="text" th:field="*{title}"/>
-            <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
-        </div><br/>
-        <!--Content-->
-        <div class="form-group" id="content">
-            <label for="contentArea">Message</label>
-            <textarea th:field="*{content}" class="form-control" id="contentArea"></textarea>
-            <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
-        </div><br/>
-        <!--sent by-->
-        <div id="author">
-            <h4>Author</h4>
-            <input type="text" th:field="*{sentBy}"/>
-            <span th:if="${#fields.hasErrors('sentBy')}" th:error="*{sentBy}"></span>
-        </div><br/>
-        <div>
-            <input type="file" name="file"/>
-        </div>
-        <br/>
-        <input type="submit" value="Submit"/>
-    </form>
+    <div class="jumbotron">
+        <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
+            <input type="hidden" th:field="*{id}"/>
+            <!--Title-->
+            <div class="form-group" id="title">
+                <h4>Title</h4>
+                <input type="text" th:field="*{title}"/>
+                <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+            </div><br/>
+            <!--Content-->
+            <div class="form-group" id="content">
+                <label for="contentArea">Message</label>
+                <textarea th:field="*{content}" class="form-control" id="contentArea"></textarea>
+                <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+            </div><br/>
+            <!--sent by-->
+            <div id="author">
+                <h4>Author</h4>
+                <input type="text" th:field="*{sentBy}"/>
+                <span th:if="${#fields.hasErrors('sentBy')}" th:error="*{sentBy}"></span>
+            </div><br/>
+            <div>
+                <input type="file" name="file"/>
+            </div>
+            <br/>
+            <input class="btn btn-primary btn-md" type="submit" value="Submit"/>
+        </form>
+    </div>
 </div>
 <!--Footer-->
-<footer></footer>
+<footer th:replace="base :: footer"></footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

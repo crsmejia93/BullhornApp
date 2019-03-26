@@ -22,7 +22,7 @@ public class Message {
     @Size(min = 3, max=250)
     private String content;
 
-
+    //The user will never see this
     private LocalDateTime postedDate;
 
     @NotNull
